@@ -44,28 +44,33 @@ a {
 }
 .btn-secondary {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 12px 24px;
 	background: #fff;
 	border: 2px solid var(--primary);
 	color: var(--primary);
 	border-radius: 999px;
 	font-weight: 600;
-	transition: all 0.2s;
+	transition: all 0.3s ease;
 }
 .btn-secondary:hover {
 	background: var(--primary);
 	color: #fff;
+	transform: translateY(-2px);
+}
+.btn-secondary i {
+	margin-right: 8px;
+	font-size: 1rem;
 }
 
-/* HERO */
-.hero {
-	min-height: 100vh; /* chiếm full màn hình */
+/* HEADER */
+.header {
+	min-height: 100vh;
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	overflow: hidden; /* không cho tràn */
+	overflow: hidden;
 }
-.hero-avatar {
+.header-avatar {
 	width: 140px;
 	height: 140px;
 	border-radius: 50%;
@@ -74,14 +79,14 @@ a {
 	margin-bottom: 20px;
 	box-shadow: 0 6px 18px var(--shadow);
 }
-.hero h1 {
+.header h1 {
 	font-size: 2.5rem;
 	font-weight: 800;
 }
-.hero h1 span {
+.header h1 span {
 	color: var(--primary);
 }
-.hero p {
+.header p {
 	margin: 12px 0 20px;
 	font-size: 1.2rem;
 	color: var(--text-muted);
@@ -213,13 +218,13 @@ footer {
 		max-width: 300px;
 		margin: 0 auto;
 	}
-	.hero h1 {
+	.header h1 {
 		font-size: 2rem;
 	}
 }
 
 /* SLIDESHOW */
-.hero {
+.header {
 	position: relative;
 	min-height: 90vh;
 	display: flex;
@@ -228,12 +233,12 @@ footer {
 	text-align: center;
 	overflow: hidden;
 }
-.hero-slideshow {
+.header-slideshow {
 	position: absolute;
 	inset: 0;
 	z-index: 0;
 }
-.hero-slideshow .slide {
+.header-slideshow .slide {
 	position: absolute;
 	inset: 0;
 	width: 100%;
@@ -242,10 +247,10 @@ footer {
 	opacity: 0;
 	transition: opacity 1.2s ease-in-out;
 }
-.hero-slideshow .slide.active {
+.header-slideshow .slide.active {
 	opacity: 1;
 }
-.hero-content {
+.header-content {
 	position: relative;
 	z-index: 1;
 }

@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>Shu | Portfolio</title>
+
+		<!-- CSS -->
 		<link rel="stylesheet" href="src/css/style.css" />
+
+		<!-- Fonts & Icons -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
 			rel="stylesheet"
 		/>
-		<script
-			src="https://kit.fontawesome.com/yourkit.js"
-			crossorigin="anonymous"
-		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
 	</head>
 	<body>
-		<!-- Dark mode toggle -->
-		<button class="theme-toggle" id="themeToggle">🌙</button>
+		<!-- Theme toggle -->
+		<button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+			🌙
+		</button>
 
-		<!-- HERO / SLIDESHOW -->
-		<header class="hero">
-			<div class="hero-slideshow">
-				<img src="src/assets/pic1.gif" class="slide active" />
-				<img src="src/assets/pic2.gif" class="slide" />
-				<img src="src/assets/pic3.gif" class="slide" />
+		<!-- HEADER / SLIDESHOW -->
+		<header class="header">
+			<div class="header-slideshow" aria-hidden="true">
+				<img
+					src="src/assets/pic2.gif"
+					alt="Banner 1"
+					class="slide active"
+				/>
+				<img src="src/assets/pic2.gif" alt="Banner 2" class="slide" />
+				<img src="src/assets/pic2.gif" alt="Banner 3" class="slide" />
 			</div>
-			<div class="hero-content">
+
+			<div class="header-content">
 				<img
 					src="src/assets/main_avt.jpg"
 					alt="Shu Avatar"
-					class="hero-avatar"
+					class="header-avatar"
 				/>
 				<h1>Hi, I'm <span>Shu</span> 👋</h1>
 				<p>Aspiring IT Student | UX/UI Enthusiast</p>
-				<a href="#projects" class="btn-primary">View My Work</a>
+				<a href="#projects" class="btn-primary">View My Project</a>
 			</div>
 		</header>
 
@@ -52,12 +63,16 @@
 						design and development. I enjoy building clean,
 						user-friendly websites and learning new technologies.
 					</p>
+
+					<!-- download link: đường dẫn file PDF đặt trong src/assets/ -->
 					<a
 						href="src/assets/CV_NguyenThanhTrung.pdf"
 						download
 						class="btn-secondary"
-						>Download CV</a
 					>
+						<i class="fa-solid fa-download" aria-hidden="true"></i>
+						Download CV
+					</a>
 				</div>
 			</div>
 		</section>
@@ -66,13 +81,15 @@
 		<section class="skills fade-in" id="skills">
 			<h2 class="section-title">SKILLS</h2>
 			<div class="skills-grid">
-				<div class="skill-card"><i class="fab fa-html5"></i>HTML</div>
-				<div class="skill-card"><i class="fab fa-css3-alt"></i>CSS</div>
+				<div class="skill-card"><i class="fab fa-html5"></i> HTML</div>
 				<div class="skill-card">
-					<i class="fab fa-js"></i>JavaScript
+					<i class="fab fa-css3-alt"></i> CSS
 				</div>
-				<div class="skill-card"><i class="fab fa-react"></i>React</div>
-				<div class="skill-card"><i class="fab fa-figma"></i>Figma</div>
+				<div class="skill-card">
+					<i class="fab fa-js"></i> JavaScript
+				</div>
+				<div class="skill-card"><i class="fab fa-react"></i> React</div>
+				<div class="skill-card"><i class="fab fa-figma"></i> Figma</div>
 			</div>
 		</section>
 
@@ -85,11 +102,12 @@
 						<img src="src/assets/main_avt.jpg" alt="Project 1" />
 					</div>
 					<h3>Dev & HR Coordinator - Data Warehouse</h3>
-					<p>UI Deverloper</p>
-					<p>HTML, CSS, Telegrik C#</p>
-					<p>08/2022-04/2023</p>
+					<p>UI Developer</p>
+					<p>HTML, CSS, Telerik C#</p>
+					<p>08/2022 - 04/2023</p>
 					<a href="#" class="btn-primary">View</a>
 				</div>
+
 				<div class="project-card">
 					<div class="project-img">
 						<img src="src/assets/main_avt.jpg" alt="Project 2" />
@@ -97,7 +115,7 @@
 					<h3>Dev & Design - Data Warehouse</h3>
 					<p>UI Designer</p>
 					<p>HTML, CSS, Figma</p>
-					<p>08/2023-02/2024</p>
+					<p>08/2023 - 02/2024</p>
 					<a href="#" class="btn-primary">View</a>
 				</div>
 			</div>
@@ -108,9 +126,30 @@
 			<h2 class="section-title">Get In Touch</h2>
 			<p>Feel free to reach out to me on social media!</p>
 			<div class="social-links">
-				<a href="#"><i class="fab fa-github"></i></a>
-				<a href="#"><i class="fab fa-linkedin"></i></a>
-				<a href="#"><i class="fab fa-facebook"></i></a>
+				<a
+					href="https://www.facebook.com/shune.2301/"
+					aria-label="Facebook"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<i class="fab fa-facebook"></i>
+				</a>
+				<a
+					href="https://www.instagram.com/shune.2301/"
+					aria-label="Instagram"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a
+					href="https://github.com/Shu2301"
+					aria-label="GitHub"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<i class="fab fa-github"></i>
+				</a>
 			</div>
 		</section>
 
@@ -119,6 +158,7 @@
 			<p>© 2025 Shu. Made with 💖</p>
 		</footer>
 
+		<!-- JS -->
 		<script src="src/js/main.js"></script>
 	</body>
 </html>
