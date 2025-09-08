@@ -59,13 +59,11 @@ a {
 
 /* HERO */
 .hero {
-	min-height: 90vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background: linear-gradient(180deg, #ffe5ec, #fff);
-	padding: 40px 20px;
+	min-height: 100vh; /* chiếm full màn hình */
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* không cho tràn */
 }
 .hero-avatar {
 	width: 140px;
@@ -297,4 +295,16 @@ body.dark {
 	border-radius: 6px;
 	cursor: pointer;
 	z-index: 2000;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+	width: 6px; /* chỉnh nhỏ */
+}
+::-webkit-scrollbar-thumb {
+	background: var(--primary); /* màu hồng chủ đạo */
+	border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
 }
