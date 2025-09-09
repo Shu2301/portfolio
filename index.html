@@ -28,17 +28,25 @@
 		<header class="header">
 			<div class="header-slideshow" aria-hidden="true">
 				<img
-					src="src/assets/pic1.png"
+					src="src/assets/banner/banner1.png"
 					alt="Banner 1"
 					class="slide active"
 				/>
-				<img src="src/assets/pic2.png" alt="Banner 2" class="slide" />
-				<img src="src/assets/pic3.jpg" alt="Banner 3" class="slide" />
+				<img
+					src="src/assets/banner/banner2.png"
+					alt="Banner 2"
+					class="slide"
+				/>
+				<img
+					src="src/assets/banner/banner3.jpg"
+					alt="Banner 3"
+					class="slide"
+				/>
 			</div>
 
 			<div class="header-content">
 				<img
-					src="src/assets/main_avt.jpg"
+					src="src/assets/banner/avt_banner.jpg"
 					alt="Shu Avatar"
 					class="header-avatar"
 				/>
@@ -53,7 +61,7 @@
 			<h2 class="section-title">ABOUT ME</h2>
 			<div class="about-grid">
 				<img
-					src="src/assets/main_avt.jpg"
+					src="src/assets/avt_cv/avt3.jpg"
 					alt="Shu"
 					class="about-img"
 				/>
@@ -64,14 +72,21 @@
 						user-friendly websites and learning new technologies.
 					</p>
 
-					<a
-						href="src/assets/CV_NguyenThanhTrung.pdf"
-						download
-						class="btn-secondary"
-					>
-						<i class="fa-solid fa-download" aria-hidden="true"></i>
-						Download CV
-					</a>
+					<p>
+						When I'm not coding, I love exploring design trends and
+						enhancing my skills. I'm excited to connect and
+						collaborate on innovative projects!
+					</p>
+
+					<div class="about-actions">
+						<a
+							href="src/assets/CV_NguyenThanhTrung.pdf"
+							download
+							class="btn-secondary glow"
+						>
+							<i class="fa-solid fa-download"></i> Download CV
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -96,29 +111,80 @@
 		<section class="projects fade-in" id="projects">
 			<h2 class="section-title">PROJECTS</h2>
 			<div class="projects-grid">
+				<!-- Project 1 -->
 				<div class="project-card">
 					<div class="project-img">
-						<img src="src/assets/main_avt.jpg" alt="Project 1" />
+						<img src="src/assets/example.jpg" alt="Project 1" />
 					</div>
 					<h3>Dev & HR Coordinator - Data Warehouse</h3>
 					<p>UI Developer</p>
 					<p>HTML, CSS, Telerik C#</p>
 					<p>08/2022 - 04/2023</p>
-					<a href="#" class="btn-primary">View</a>
+					<a href="#" class="btn-primary open-modal" data-project="1"
+						>View</a
+					>
 				</div>
 
+				<!-- Project 2 -->
 				<div class="project-card">
 					<div class="project-img">
-						<img src="src/assets/main_avt.jpg" alt="Project 2" />
+						<img src="src/assets/example.jpg" alt="Project 2" />
 					</div>
 					<h3>Dev & Design - Data Warehouse</h3>
 					<p>UI Designer</p>
 					<p>HTML, CSS, Figma</p>
 					<p>08/2023 - 02/2024</p>
-					<a href="#" class="btn-primary">View</a>
+					<a href="#" class="btn-primary open-modal" data-project="2"
+						>View</a
+					>
 				</div>
 			</div>
 		</section>
+
+		<!-- CV Modal -->
+		<div class="modal" id="cv-modal">
+			<div class="modal-content">
+				<span class="modal-close">&times;</span>
+				<iframe
+					src="src/assets/CV_NguyenThanhTrung.pdf"
+					width="100%"
+					height="500px"
+				></iframe>
+				<div class="modal-actions">
+					<a
+						href="src/assets/CV_NguyenThanhTrung.pdf"
+						download
+						class="btn-primary"
+						>Download CV</a
+					>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROJECTS MODAL -->
+		<div class="modal" id="project-modal">
+			<div class="modal-content">
+				<img id="modal-img" src="" alt="Project Preview" />
+				<h3 id="modal-title">Project Title</h3>
+				<p id="modal-desc">Project description...</p>
+				<div class="modal-actions">
+					<a
+						id="modal-github"
+						href="#"
+						target="_blank"
+						class="btn-secondary"
+						>GitHub</a
+					>
+					<a
+						id="modal-demo"
+						href="#"
+						target="_blank"
+						class="btn-primary"
+						>Live Demo</a
+					>
+				</div>
+			</div>
+		</div>
 
 		<!-- CONTACT -->
 		<section class="contact fade-in" id="contact">
