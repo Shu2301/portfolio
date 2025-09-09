@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-	// SLIDESHOW
+	/* ================== SLIDESHOW ================== */
 	const slides = Array.from(
 		document.querySelectorAll('.header-slideshow .slide')
 	);
@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const startSlideshow = () => {
-		if (slideInterval || slides.length <= 1) return;
+		if (slides.length <= 1) return;
+		stopSlideshow();
 		slideInterval = setInterval(() => {
 			current = (current + 1) % slides.length;
 			showSlide(current);
@@ -25,17 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	};
 
-	// PAUSE SLIDESHOW (save CPU)
+	// Pause slideshow when tab inactive
 	document.addEventListener('visibilitychange', () => {
 		if (document.hidden) stopSlideshow();
 		else startSlideshow();
 	});
 
-	// Init
+	// Init slideshow
 	showSlide(0);
 	startSlideshow();
 
-	// SCROLL ANIMATION (simple, keep same behavior)
+	/* ================== SCROLL ANIMATION ================== */
 	const sections = document.querySelectorAll('.fade-in');
 	const revealOnScroll = () => {
 		const triggerBottom = window.innerHeight * 0.85;
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('scroll', revealOnScroll, { passive: true });
 	revealOnScroll();
 
-	// THEME TOGGLE
+	/* ================== THEME TOGGLE ================== */
 	const toggleBtn = document.getElementById('themeToggle');
 	if (toggleBtn) {
 		toggleBtn.addEventListener('click', () => {
@@ -57,18 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
 				: '🌙';
 		});
 	}
+
+	/* ================== PROJECT MODAL ================== */
 	const modal = document.getElementById('project-modal');
 	const closeBtn = modal.querySelector('.modal-close');
-
 	const modalImg = document.getElementById('modal-img');
 	const modalTitle = document.getElementById('modal-title');
 	const modalDesc = document.getElementById('modal-desc');
 	const modalGithub = document.getElementById('modal-github');
 	const modalDemo = document.getElementById('modal-demo');
-
 	const openBtns = document.querySelectorAll('.open-modal');
 
-	// DATA PROJECTS
+	// Project data
 	const projectData = {
 		1: {
 			title: 'Dev & HR Coordinator - Data Warehouse',
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	};
 
-	// OPEN MODAL
+	// Open project modal
 	openBtns.forEach((btn) => {
 		btn.addEventListener('click', (e) => {
 			e.preventDefault();
@@ -103,29 +104,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	/* ================== CV MODAL ================== */
 	const cvModal = document.getElementById('cv-modal');
 	const cvOpenBtn = document.querySelector('.open-cv');
-	const cvCloseBtn = cvModal.querySelector('.modal-close');
-	// CLOSE MODAL
+
+	if (cvOpenBtn) {
+		cvOpenBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			cvModal.style.display = 'flex';
+		});
+	}
+
+	/* ================== MODAL CLOSE HANDLERS ================== */
+	// Close by clicking outside
 	window.addEventListener('click', (e) => {
-		if (e.target === modal) {
-			modal.style.display = 'none';
-		}
+		if (e.target === modal) modal.style.display = 'none';
+		if (e.target === cvModal) cvModal.style.display = 'none';
 	});
 
-	// OPEN MODAL CV
-	cvOpenBtn.addEventListener('click', (e) => {
-		e.preventDefault();
-		cvModal.style.display = 'flex';
-	});
-
-	// CLOSE MODAL CV
-	cvCloseBtn.addEventListener('click', () => {
-		cvModal.style.display = 'none';
-	});
-	window.addEventListener('click', (e) => {
-		if (e.target === cvModal) {
-			cvModal.style.display = 'none';
+	// Close by ESC key
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			if (modal.style.display === 'flex') modal.style.display = 'none';
+			if (cvModal.style.display === 'flex')
+				cvModal.style.display = 'none';
 		}
 	});
 });
