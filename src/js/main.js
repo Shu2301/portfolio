@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		1: {
 			title: 'Dev & HR Coordinator - Data Warehouse',
 			desc: 'Phát triển UI và phối hợp nhân sự trong hệ thống Data Warehouse.',
-			img: 'src/assets/project/example.jpg',
+			img: 'src/assets/main_avt.jpg',
 			github: 'https://github.com/Shu2301',
 			demo: 'https://example.com/demo1',
 		},
 		2: {
 			title: 'Dev & Design - Data Warehouse',
 			desc: 'Thiết kế UI/UX và phát triển giao diện với HTML, CSS, Figma.',
-			img: 'src/assets/project/example.jpg',
+			img: 'src/assets/main_avt.jpg',
 			github: 'https://github.com/Shu2301',
 			demo: 'https://example.com/demo2',
 		},
