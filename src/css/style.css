@@ -37,35 +37,22 @@
 		gap: 1rem;
 	}
 }
-/* RESPONSIVE TABLE */
+/* Tablet */
 @media (max-width: 768px) {
-	.about-grid {
-		grid-template-columns: 1fr;
-		text-align: center;
-	}
-	.about-img {
-		max-width: 260px;
-		margin: 0 auto 20px;
-		display: block;
-	}
-	.about p {
-		text-align: justify;
+	footer {
+		font-size: 0.95rem;
+		padding: 16px;
+		line-height: 1.4;
 	}
 }
-/* RESPONSIVE MOBILE */
+
+/* Mobile */
 @media (max-width: 480px) {
-	.about-actions .btn-secondary {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		max-width: 220px;
-		margin: 0 auto;
-		padding: 10px 0;
-		font-size: 0.95rem;
-	}
-	.about-actions .btn-secondary i {
-		margin-right: 6px;
+	footer {
+		font-size: 0.85rem;
+		padding: 12px;
+		text-align: center;
+		word-break: break-word;
 	}
 }
 
